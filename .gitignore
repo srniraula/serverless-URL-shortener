@@ -5,3 +5,6 @@ deployment.zip
 __pycache__/
 *.pyc
 .pytest_cache/
+
+# Virtual environment
+.venv/
