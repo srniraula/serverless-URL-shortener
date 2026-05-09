@@ -21,7 +21,7 @@ GET /{shortCode}/stats    → Lambda → DynamoDB (read) → JSON response
 - **Compute:** AWS Lambda
 - **API:** AWS API Gateway (REST)
 - **Database:** AWS DynamoDB (single-table design)
-- **CI/CD:** GitHub Actions
+- **CI/CD:** Jenkins + GitHub Actions
 - **Testing:** pytest, moto
 
 ---
@@ -41,6 +41,7 @@ url-shortener/
 │   ├── test_create.py
 │   ├── test_redirect.py
 │   └── test_analytics.py
+├── Jenkinsfile
 └── requirements.txt
 ```
 
@@ -135,6 +136,8 @@ aws lambda update-function-code \
   --function-name url-shortener \
   --zip-file fileb://deployment.zip
 ```
+
+Automated deployment is handled by Jenkins on every push to `master`.
 
 ---
 
