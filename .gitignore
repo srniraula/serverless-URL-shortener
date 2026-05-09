@@ -1,0 +1,7 @@
+# Deployment artifact
+deployment.zip
+
+# Python cache
+__pycache__/
+*.pyc
+.pytest_cache/
