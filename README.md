@@ -1,7 +1,7 @@
 # URL Shortener
 
 A serverless URL shortener built on AWS Lambda, API Gateway, and DynamoDB.  
-Supports URL creation, redirection, and click analytics.
+Supports URL creation, redirection, and click analytics. Tested using AWS free tier account
 
 ---
 
