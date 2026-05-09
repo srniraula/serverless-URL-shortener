@@ -9,13 +9,16 @@ pipeline {
     stages {
         stage('Install dependencies') {
             steps {
-                sh 'pip install -r requirements.txt'
+                sh '''
+                    python3 -m venv .venv
+                    .venv/bin/pip install -r requirements.txt
+                '''
             }
         }
 
         stage('Run tests') {
             steps {
-                sh 'python -m pytest tests/ -v'
+                sh '.venv/bin/python -m pytest tests/ -v'
             }
         }
 
