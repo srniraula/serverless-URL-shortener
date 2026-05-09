@@ -4,9 +4,10 @@ import boto3
 import os
 
 TABLE_NAME = os.environ.get('TABLE_NAME', 'url-shortener')
+REGION = os.environ.get('AWS_DEFAULT_REGION', 'eu-north-1')
 
 def get_table():
-    dynamodb = boto3.resource('dynamodb')
+    dynamodb = boto3.resource('dynamodb', region_name=REGION)
     return dynamodb.Table(TABLE_NAME)
 
 def save_url(short_code, original_url, created_at):
